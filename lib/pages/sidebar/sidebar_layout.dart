@@ -5,7 +5,8 @@ import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 import 'sidebar.dart';
 
 class SideBarLayout extends StatefulWidget {
-  SideBarLayout({Key key}) : super(key: key);
+  var user;
+  SideBarLayout({Key key, this.user}) : super(key: key);
 
   @override
   _SideBarLayoutState createState() => _SideBarLayoutState();
@@ -27,7 +28,7 @@ class _SideBarLayoutState extends State<SideBarLayout> {
                 return navigationState as Widget;
               },
             ),
-            SideBar(),
+            SideBar(user:widget.user),
           ],
         ),
       ),

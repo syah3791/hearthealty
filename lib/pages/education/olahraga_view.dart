@@ -24,52 +24,26 @@ class _OlahragaState extends State<OlahragaView> {
               Center(
                 child: Text(
                   "Olahraga",
-                  style: kNonActiveTabStyle.copyWith(fontWeight: FontWeight.bold),
+                  style: kNonActiveTabStyle.copyWith(fontWeight: FontWeight.bold, color: Color(0xffff5e56)),
                 ),
               ),
             ],
           ),
         ),
-        // body: ListView.builder(
-        //   itemCount: recentList.length,
-        //   scrollDirection: Axis.vertical,
-        //   physics: BouncingScrollPhysics(),
-        //   shrinkWrap: true,
-        //   itemBuilder: (context, index) {
-        //     var recent = recentList[index];
-        //
-        //     return InkWell(
-        //       onTap: () {
-        //         Navigator.push(
-        //           context,
-        //           MaterialPageRoute(
-        //             builder: (context) => ReadNewsView(news: recent),
-        //           ),
-        //         );
-        //       },
-        //       child: Container(
-        //         width: double.infinity,
-        //         height: 135.0,
-        //         margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-        //         child: SecondaryCard(news: recent),
-        //       ),
-        //     );
-        //   },
-        // )
         body: ListView.builder(
           itemCount: olahragaList.length,
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           physics: BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            var trending = olahragaList[index];
+            var olahraga = olahragaList[index];
 
             return InkWell(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ReadNewsView(news: trending),
+                    builder: (context) => ReadNewsView(news: olahraga),
                   ),
                 );
               },
@@ -77,7 +51,7 @@ class _OlahragaState extends State<OlahragaView> {
                 width: double.infinity,
                 height: 300.0,
                 margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 12.0),
-                child: PrimaryCard(news: trending),
+                child: PrimaryCard(news: olahraga),
               ),
             );
           },

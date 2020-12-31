@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:hearthealthy/pages/intro/signupPage.dart';
-import 'package:hearthealthy/pages/sidebar/sidebar_layout.dart';
+import 'package:hearthealthy/main.dart';
+import 'package:hearthealthy/service/auth_service.dart';
 import 'package:hearthealthy/widget/title.dart';
 import 'package:hearthealthy/widget/bezierContainer.dart';
 
@@ -16,6 +17,19 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
+  var _input;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController = TextEditingController(text: "");
+    _passwordController = TextEditingController(text: "");
+    _input = [_emailController,_passwordController];
+  }
+
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -37,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _entryField(String title, {bool isPassword = false}) {
+  Widget _entryField(String title, int counter, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -50,8 +64,9 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 10,
           ),
-          TextField(
+          TextFormField(
               obscureText: isPassword,
+              controller: _input[counter],
               decoration: InputDecoration(
                   border: InputBorder.none,
                   fillColor: Color(0xfff3f3f4),
@@ -63,10 +78,31 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _submitButton() {
     return InkWell(
-        onTap: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => SideBarLayout()));
-    },
+        onTap: () async {
+          if (_input[0].text.isEmpty ||
+              _input[1].text.isEmpty) {
+            _scaffoldState.currentState.showSnackBar(SnackBar(
+              content: Text("Email and password cannot be empty"),
+            ));
+            return;
+          }
+          try {
+            final user = await AuthHelper.signInWithEmail(
+                email: _input[0].text,
+                password: _input[1].text);
+            if (user == 'Signed in') {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
+            }
+            else {
+              _scaffoldState.currentState.showSnackBar(SnackBar(
+                content: Text(user),
+              ));
+            }
+          } catch (e) {
+            print(e);
+          }
+        },
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.symmetric(vertical: 15),
@@ -125,51 +161,61 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _facebookButton() {
-    return Container(
-      height: 50,
-      margin: EdgeInsets.symmetric(vertical: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xff1959a9),
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(5),
-                    topLeft: Radius.circular(5)),
+  Widget _googleButton() {
+    return InkWell(
+        onTap: () async {
+      try {
+        await AuthHelper.signInWithGoogle();
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+      } catch (e) {
+        print(e);
+      }
+    },
+      child: Container(
+        height: 50,
+        margin: EdgeInsets.symmetric(vertical: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(5),
+                      topLeft: Radius.circular(5)),
+                ),
+                alignment: Alignment.center,
+                child: Text('G',
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400)),
               ),
-              alignment: Alignment.center,
-              child: Text('f',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w400)),
             ),
-          ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xff2872ba),
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(5),
-                    topRight: Radius.circular(5)),
+            Expanded(
+              flex: 5,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(5),
+                      topRight: Radius.circular(5)),
+                ),
+                alignment: Alignment.center,
+                child: Text('Log in with Google',
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400)),
               ),
-              alignment: Alignment.center,
-              child: Text('Log in with Facebook',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400)),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
+      )
     );
   }
 
@@ -209,8 +255,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Email id"),
-        _entryField("Password", isPassword: true),
+        _entryField("Email id", 0),
+        _entryField("Password", 1, isPassword: true),
       ],
     );
   }
@@ -219,6 +265,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
+      key: _scaffoldState,
         body: Container(
       height: height,
             child: Stack(
@@ -248,7 +295,7 @@ class _LoginPageState extends State<LoginPage> {
                                   fontSize: 14, fontWeight: FontWeight.w500)),
                         ),
                         _divider(),
-                        //_facebookButton(),
+                        _googleButton(),
                         SizedBox(height: height * .055),
                         _createAccountLabel(),
                       ],

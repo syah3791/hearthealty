@@ -51,19 +51,19 @@ class _PolaHidupState extends State<PolaHidupView> {
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    var news = makanBaikList[index];
+                    var makanBaik = makanBaikList[index];
                     return InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ReadNewsView(news: news),
+                            builder: (context) => ReadNewsView(news: makanBaik),
                           ),
                         );
                       },
                       child: Container(
                         margin: EdgeInsets.only(right: 12.0),
-                        child: PrimaryCard(news: news),
+                        child: PrimaryCard(news: makanBaik),
                       ),
                     );
                   },
@@ -88,19 +88,19 @@ class _PolaHidupState extends State<PolaHidupView> {
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
-                    var recent = makanBurukList[index];
+                    var makanBuruk = makanBurukList[index];
                     return InkWell(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ReadNewsView(news: recent),
+                            builder: (context) => ReadNewsView(news: makanBuruk),
                           ),
                         );
                       },
                       child: Container(
                         margin: EdgeInsets.only(right: 12.0),
-                        child: PrimaryCard(news: recent),
+                        child: PrimaryCard(news: makanBuruk),
                       ),
                     );
                   },

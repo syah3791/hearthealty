@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hearthealthy/widget/bezierContainer.dart';
 import 'package:hearthealthy/widget/title.dart';
 import 'package:hearthealthy/pages/intro/loginPage.dart';
+import 'package:hearthealthy/service/auth_service.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
@@ -13,6 +14,20 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
+  TextEditingController _confirmPasswordController;
+  var _input;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController = TextEditingController(text: "");
+    _passwordController = TextEditingController(text: "");
+    _confirmPasswordController = TextEditingController(text: "");
+    _input = [_emailController,_passwordController,_confirmPasswordController];
+  }
   Widget _backButton() {
     return InkWell(
       onTap: () {
@@ -34,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Widget _entryField(String title, {bool isPassword = false}) {
+  Widget _entryField(String title, int counter, {bool isPassword = false}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -49,6 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           TextField(
               obscureText: isPassword,
+              controller: _input[counter],
               decoration: InputDecoration(
                   border: InputBorder.none,
                   fillColor: Color(0xfff3f3f4),
@@ -59,28 +75,62 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _submitButton() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.grey.shade200,
-                offset: Offset(2, 4),
-                blurRadius: 5,
-                spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.grey.shade200, Color(0xffff5e56)])),
-      child: Text(
-        'Register Now',
-        style: TextStyle(fontSize: 20, color: Colors.white),
-      ),
-    );
+    return InkWell(
+      onTap: () async {
+        if (_input[0].text.isEmpty ||
+            _input[1].text.isEmpty) {
+          _scaffoldState.currentState.showSnackBar(SnackBar(
+            content: Text("Email and password cannot be empty"),
+          ));
+          return;
+        }
+        if (_input[2].text.isEmpty ||
+            _input[1].text !=
+                _input[2].text) {
+          _scaffoldState.currentState.showSnackBar(SnackBar(
+            content: Text("Confirm password does not match"),
+          ));
+          return;
+        }
+        try {
+          final user = await AuthHelper.signupWithEmail(
+              email: _input[0].text,
+              password: _input[1].text);
+          if (user == 'Signed up') {
+            print("signup successful");
+            Navigator.pop(context);
+          }
+          else {
+            _scaffoldState.currentState.showSnackBar(SnackBar(
+              content: Text(user),
+            ));
+          }
+        } catch (e) {
+          print(e);
+        }
+      },
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: EdgeInsets.symmetric(vertical: 15),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.grey.shade200,
+                    offset: Offset(2, 4),
+                    blurRadius: 5,
+                    spreadRadius: 2)
+              ],
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Colors.grey.shade200, Color(0xffff5e56)])),
+          child: Text(
+            'Register Now',
+            style: TextStyle(fontSize: 20, color: Colors.white),
+          ),
+    ));
   }
 
   Widget _loginAccountLabel() {
@@ -119,9 +169,9 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _emailPasswordWidget() {
     return Column(
       children: <Widget>[
-        _entryField("Username"),
-        _entryField("Email id"),
-        _entryField("Password", isPassword: true),
+        _entryField("Email id", 0),
+        _entryField("Password", 1, isPassword: true),
+        _entryField("Confirm Password", 2, isPassword: true),
       ],
     );
   }
@@ -130,6 +180,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
+      key: _scaffoldState,
       body: Container(
         height: height,
         child: Stack(

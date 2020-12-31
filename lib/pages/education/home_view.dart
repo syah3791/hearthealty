@@ -76,13 +76,13 @@ class _HomeState extends State<HomeView> {
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
                 itemBuilder: (context, index) {
-                  var recent = randomList[index];
+                  var random = randomList[index];
                   return InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ReadNewsView(news: recent),
+                          builder: (context) => ReadNewsView(news: random),
                         ),
                       );
                     },
@@ -90,7 +90,7 @@ class _HomeState extends State<HomeView> {
                       width: double.infinity,
                       height: 135.0,
                       margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-                      child: SecondaryCard(news: recent),
+                      child: SecondaryCard(news: random),
                     ),
                   );
                 },

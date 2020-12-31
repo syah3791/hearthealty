@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 import 'package:hearthealthy/widget/constants.dart';
 import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/widget/circle_button.dart';
@@ -8,6 +9,8 @@ class ReadNewsView extends StatelessWidget {
   ReadNewsView({this.news});
   @override
   Widget build(BuildContext context) {
+    var rng = new Random();
+    int tag = rng.nextInt(100);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
@@ -43,7 +46,7 @@ class ReadNewsView extends StatelessWidget {
           children: [
             SizedBox(height: 12.0),
             Hero(
-              tag: news.seen,
+              tag: news.seen+'$tag',
               child: Container(
                 height: 220.0,
                 decoration: BoxDecoration(

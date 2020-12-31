@@ -9,8 +9,11 @@ import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 import '../sidebar/menu_item.dart';
 import 'package:hearthealthy/local_notify_manager.dart';
 import 'package:hearthealthy/main.dart';
+import 'package:hearthealthy/service/auth_service.dart';
 
 class SideBar extends StatefulWidget {
+  var user;
+  SideBar({Key key, this.user}) : super(key: key);
   @override
   _SideBarState createState() => _SideBarState();
 }
@@ -146,8 +149,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   child: Column(
                     children: <Widget>[
                       UserAccountsDrawerHeader(
-                          accountName: Text("Demo"),
-                          accountEmail: Text("demo@gmail.com", style: TextStyle(fontWeight: FontWeight.bold),),
+                          accountName: Text(widget.user.displayName == null ? widget.user.email.split('@')[0]:widget.user.displayName),
+                          accountEmail: Text(widget.user.email, style: TextStyle(fontWeight: FontWeight.bold),),
                           decoration: BoxDecoration(
                             color: Color(0xffff5e56),
                           ),
@@ -156,7 +159,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             Theme.of(context).platform == TargetPlatform.iOS
                                 ? Colors.blue
                                 : Colors.white,
-                            child: Text("D",style: TextStyle(fontSize: 40.0),
+                            child: Text('${widget.user.email[0].toUpperCase()}',style: TextStyle(fontSize: 40.0),
                             ),
                           ),
                           // otherAccountsPictures: <Widget>[
@@ -218,7 +221,10 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         title: "Logout",
                         onTap: () async {
                           onIconPressed();
-                          await _checkPendingNotificationRequests();
+                          localNotifyManager.cancelAllNotifications();
+                          AuthHelper.logOut();
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => MyApp()));
                         },
                       ),
                     ],

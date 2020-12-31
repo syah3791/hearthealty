@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:hearthealthy/pages/intro/welcomePage.dart';
+import 'package:hearthealthy/pages/sidebar/sidebar_layout.dart';
 
 class SplashScreenPage extends StatefulWidget {
+  bool isLogin;
+  var user;
+  SplashScreenPage({this.isLogin, this.user});
   @override
   _SplashScreenPageState createState() => _SplashScreenPageState();
 }
@@ -21,7 +25,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
-          return WelcomePage();
+          return widget.isLogin ? SideBarLayout(user:widget.user) : WelcomePage();
         }),
       );
     });
@@ -33,8 +37,8 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       backgroundColor: Color(0xffdfd7ca),
       body: Center(
         child: FractionallySizedBox(
-          widthFactor: 0.8,
-          heightFactor: 0.9,
+          widthFactor: 0.3,
+          heightFactor: 0.5,
           child: Image.asset(
             "assets/images/heart_beating_0.gif",
           ),

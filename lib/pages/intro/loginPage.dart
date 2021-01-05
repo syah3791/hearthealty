@@ -57,20 +57,15 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            title,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-          ),
-          SizedBox(
-            height: 10,
-          ),
           TextFormField(
               obscureText: isPassword,
               controller: _input[counter],
               decoration: InputDecoration(
-                  border: InputBorder.none,
-                  fillColor: Color(0xfff3f3f4),
-                  filled: true))
+                  isDense: true,
+                  border: OutlineInputBorder(),
+                  labelText: title,
+                  hintText: title,
+              ))
         ],
       ),
     );
@@ -108,20 +103,17 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.symmetric(vertical: 15),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderRadius: BorderRadius.all(Radius.circular(80)),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                  color: Colors.grey.shade200,
+                  color: Colors.grey.withAlpha(50),
                   offset: Offset(2, 4),
-                  blurRadius: 5,
+                  blurRadius: 8,
                   spreadRadius: 2)
             ],
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.grey.shade200, Color(0xffff5e56)])),
+            color: Colors.blue),
         child: Text(
-          'Login',
+          'MASUK',
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       )
@@ -176,6 +168,13 @@ class _LoginPageState extends State<LoginPage> {
         margin: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.grey.withAlpha(100),
+                offset: Offset(2, 4),
+                blurRadius: 8,
+                spreadRadius: 2)
+          ],
         ),
         child: Row(
           children: <Widget>[
@@ -189,11 +188,12 @@ class _LoginPageState extends State<LoginPage> {
                       topLeft: Radius.circular(5)),
                 ),
                 alignment: Alignment.center,
-                child: Text('G',
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w400)),
+                child: Icon(Icons.mail_outline, color: Colors.blue)
+                // child: Text('G',
+                //     style: TextStyle(
+                //         color: Colors.blue,
+                //         fontSize: 25,
+                //         fontWeight: FontWeight.w400)),
               ),
             ),
             Expanded(
@@ -206,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                       topRight: Radius.circular(5)),
                 ),
                 alignment: Alignment.center,
-                child: Text('Log in with Google',
+                child: Text('Masuk Dengan Google',
                     style: TextStyle(
                         color: Colors.grey,
                         fontSize: 18,
@@ -266,14 +266,15 @@ class _LoginPageState extends State<LoginPage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: _scaffoldState,
+        backgroundColor: Colors.white,
         body: Container(
       height: height,
             child: Stack(
               children: <Widget>[
-                Positioned(
-                    top: -height * .15,
-                    right: -MediaQuery.of(context).size.width * .4,
-                    child: BezierContainer()),
+                // Positioned(
+                //     top: -height * .15,
+                //     right: -MediaQuery.of(context).size.width * .4,
+                //     child: BezierContainer()),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
@@ -281,9 +282,19 @@ class _LoginPageState extends State<LoginPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        SizedBox(height: height * .2),
-                        TitleName(),
                         SizedBox(height: 50),
+                        TitleName(),
+                        SizedBox(height: 30),
+                        Card(
+                          semanticContainer: true,
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Image.asset("assets/images/background1.jpeg", fit: BoxFit.cover,),
+                          margin: EdgeInsets.all(10),
+
+                        ),
                         _emailPasswordWidget(),
                         SizedBox(height: 20),
                         _submitButton(),
@@ -296,7 +307,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         _divider(),
                         _googleButton(),
-                        SizedBox(height: height * .055),
                         _createAccountLabel(),
                       ],
                     ),

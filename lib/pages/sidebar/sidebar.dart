@@ -10,6 +10,7 @@ import '../sidebar/menu_item.dart';
 import 'package:hearthealthy/local_notify_manager.dart';
 import 'package:hearthealthy/main.dart';
 import 'package:hearthealthy/service/auth_service.dart';
+import 'package:hearthealthy/pages/ppg/ppg_view.dart';
 
 class SideBar extends StatefulWidget {
   var user;
@@ -162,17 +163,6 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                             child: Text('${widget.user.email[0].toUpperCase()}',style: TextStyle(fontSize: 40.0),
                             ),
                           ),
-                          // otherAccountsPictures: <Widget>[
-                          //   CircleAvatar(
-                          //     backgroundColor:
-                          //     Theme.of(context).platform == TargetPlatform.iOS
-                          //         ? Colors.blue
-                          //         : Colors.white,
-                          //     child: Image.asset(
-                          //       "assets/images/heart_beating.png",
-                          //     ),
-                          //   ),
-                          // ]
                       ),
                       Divider(
                         height: 64,
@@ -205,6 +195,16 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.OlahragaClickedEvent);
                         },
                       ),
+                      MenuItem(
+                        icon: Icons.camera_alt,
+                        title: "PPG",
+                        onTap: () async {
+                          onIconPressed();
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return PPGView();
+                          }));
+                        },
+                      ),
                       Divider(
                         height: 64,
                         thickness: 0.5,
@@ -221,10 +221,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         title: "Logout",
                         onTap: () async {
                           onIconPressed();
-                          localNotifyManager.cancelAllNotifications();
-                          AuthHelper.logOut();
-                          Navigator.push(
-                              context, MaterialPageRoute(builder: (context) => MyApp()));
+                          _onLogOut();
                         },
                       ),
                     ],
@@ -258,6 +255,34 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
           ),
         );
       },
+    );
+  }
+  _onLogOut() async {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Peringatan"),
+            content: Text("Apakah yakin mau keluar?"),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("Yes"),
+                onPressed: () {
+                  localNotifyManager.cancelAllNotifications();
+                  AuthHelper.logOut();
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => MyApp()));
+                },
+              ),
+              FlatButton(
+                child: Text("No"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        }
     );
   }
 }

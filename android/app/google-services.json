@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "228646927398",
+    "project_id": "hearthealty-78c3f",
+    "storage_bucket": "hearthealty-78c3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228646927398:android:d55df969a7419a53d77ae7",
+        "android_client_info": {
+          "package_name": "com.example.hearthealthy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228646927398-c624h8eep5vourb0ldjhv97vq2uhnht8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfBY055Fhaty-Wh3sfYmwxOj4RyyIgKV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228646927398-c624h8eep5vourb0ldjhv97vq2uhnht8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

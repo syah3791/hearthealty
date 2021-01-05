@@ -99,13 +99,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  e2e:
-    dependency: "direct dev"
-    description:
-      name: e2e
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.3+1"
   fake_async:
     dependency: transitive
     description:
@@ -126,7 +119,49 @@ packages:
       name: file
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.0-nullsafety.2"
+    version: "5.2.1"
+  firebase_auth:
+    dependency: "direct dev"
+    description:
+      name: firebase_auth
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.18.4+1"
+  firebase_auth_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_auth_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.4"
+  firebase_auth_web:
+    dependency: transitive
+    description:
+      name: firebase_auth_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.2+3"
+  firebase_core:
+    dependency: "direct dev"
+    description:
+      name: firebase_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.3"
+  firebase_core_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_core_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.0"
+  firebase_core_web:
+    dependency: transitive
+    description:
+      name: firebase_core_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1+1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -139,11 +174,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  flutter_driver:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -165,6 +195,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0+1"
+  flutter_staggered_grid_view:
+    dependency: "direct dev"
+    description:
+      name: flutter_staggered_grid_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.3"
   flutter_svg:
     dependency: "direct dev"
     description:
@@ -182,11 +219,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  fuchsia_remote_debug_protocol:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -194,6 +226,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
+  google_sign_in:
+    dependency: "direct dev"
+    description:
+      name: google_sign_in
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.5.6"
+  google_sign_in_platform_interface:
+    dependency: transitive
+    description:
+      name: google_sign_in_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
+  google_sign_in_web:
+    dependency: transitive
+    description:
+      name: google_sign_in_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.9.2"
   http:
     dependency: transitive
     description:
@@ -215,13 +268,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.19"
-  json_rpc_2:
+  intl:
     dependency: transitive
     description:
-      name: json_rpc_2
+      name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.2"
+    version: "0.16.1"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.2"
   matcher:
     dependency: transitive
     description:
@@ -258,7 +318,7 @@ packages:
     source: hosted
     version: "0.1.4"
   path_provider:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: path_provider
       url: "https://pub.dartlang.org"
@@ -299,6 +359,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
+  permission_handler:
+    dependency: "direct dev"
+    description:
+      name: permission_handler
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.4.0+hotfix.4"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   petitparser:
     dependency: transitive
     description:
@@ -312,7 +386,7 @@ packages:
       name: platform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.0-nullsafety.2"
+    version: "2.2.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -320,13 +394,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  ppg:
+    dependency: "direct dev"
+    description:
+      name: ppg
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.9"
   process:
     dependency: transitive
     description:
       name: process
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-nullsafety.2"
+    version: "3.0.13"
   provider:
     dependency: transitive
     description:
@@ -334,13 +415,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
-  pub_semver:
+  quiver:
     dependency: transitive
     description:
-      name: pub_semver
+      name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.4"
+    version: "2.1.5"
   rxdart:
     dependency: "direct dev"
     description:
@@ -348,6 +429,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.22.6"
+  scoped_model:
+    dependency: "direct dev"
+    description:
+      name: scoped_model
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   shared_preferences:
     dependency: "direct dev"
     description:
@@ -423,13 +511,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0-nullsafety.1"
-  sync_http:
-    dependency: transitive
-    description:
-      name: sync_http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
   term_glyph:
     dependency: transitive
     description:
@@ -465,27 +546,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.3"
-  vm_service_client:
-    dependency: transitive
-    description:
-      name: vm_service_client
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.6+2"
-  web_socket_channel:
-    dependency: transitive
-    description:
-      name: web_socket_channel
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
-  webdriver:
-    dependency: transitive
-    description:
-      name: webdriver
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.2"
   win32:
     dependency: transitive
     description:

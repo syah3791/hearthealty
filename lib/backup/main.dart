@@ -41,14 +41,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: StreamBuilder<User>(
-            stream: FirebaseAuth.instance.authStateChanges(),
-            builder: (context, snapshot) {
-              if(snapshot.hasData && snapshot.data != null) {
-                return SplashScreenPage(isLogin:true, user:snapshot.data);
-              }
-              return SplashScreenPage(isLogin:false);
-            }
-        )
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if(snapshot.hasData && snapshot.data != null) {
+            return SplashScreenPage(isLogin:true, user:snapshot.data);
+          }
+          return SplashScreenPage(isLogin:false);
+        }
+    )
     );
   }
 }

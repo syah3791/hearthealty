@@ -33,15 +33,22 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  e2e: ^0.4.3+1
   flutter_launcher_icons: "^0.8.0"
   device_info: ^0.4.2+4
   flutter_svg: ^0.18.0
   flutter_bloc: ^2.1.1
+  flutter_staggered_grid_view: ^0.3.3
+  shared_preferences: ^0.5.7
+  ppg: ^0.1.9
+  permission_handler: ^4.0.0
+  scoped_model: ^1.0.1
+  #Notif
   flutter_local_notifications: ^3.0.0
   rxdart: ^0.22.0
-  path_provider: ^1.6.7
-  shared_preferences: ^0.5.7
+  #Firebase
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.0+1
+  google_sign_in: ^4.5.3
 
 flutter_icons:
   android: 'app_icon'

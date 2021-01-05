@@ -35,7 +35,7 @@ List<News> beritaList = [
     estimate: "3",
     category: "Health",
     favorite: "700",
-    seen: "4.5K",
+    seen: "4.51K",
     time: "4 hours ago",
     title:
     "Penyakit Jantung Koroner",
@@ -51,7 +51,7 @@ List<News> beritaList = [
     estimate: "5",
     category: "Health",
     favorite: "502",
-    seen: "1.2K",
+    seen: "1.22K",
     time: "10 hours ago",
     title:
     "Gejala Penyakit Jantung Koroner",
@@ -64,10 +64,10 @@ List<News> beritaList = [
     ),
   News(
     author: "Jon Fingas",
-    estimate: "12",
+    estimate: "123",
     category: "Health",
     favorite: "23K",
-    seen: "40.5K",
+    seen: "40.53K",
     time: "12 Hours ago",
     title:
     "Penyebab Penyakit Jantung Koroner",
@@ -83,7 +83,7 @@ List<News> beritaList = [
     estimate: "8",
     category: "Health",
     favorite: "12K",
-    seen: "30K",
+    seen: "304K",
     time: "22 Hours ago",
     title: "Faktor Risiko Penyakit Jantung Koroner",
     image:
@@ -98,7 +98,7 @@ List<News> beritaList = [
     estimate: "6",
     category: "Health",
     favorite: "21K",
-    seen: "40.2K",
+    seen: "40.25K",
     time: "8 Hours ago",
     title:
     "Diagnosis Penyakit Jantung Koroner",
@@ -117,7 +117,7 @@ List<News> makanBurukList = [
     estimate: "3",
     category: "Health",
     favorite: "700",
-    seen: "4.5K",
+    seen: "4.56K",
     time: "4 hours ago",
     title:
     "Pizza",
@@ -133,7 +133,7 @@ List<News> makanBurukList = [
       estimate: "5",
       category: "Health",
       favorite: "502",
-      seen: "1.2K",
+      seen: "1.27K",
       time: "10 hours ago",
       title:
       "Mie Instan",
@@ -149,7 +149,7 @@ List<News> makanBurukList = [
       estimate: "12",
       category: "Health",
       favorite: "23K",
-      seen: "40.5K",
+      seen: "40.58K",
       time: "12 Hours ago",
       title:
       "Bakso",
@@ -165,7 +165,7 @@ List<News> makanBurukList = [
       estimate: "8",
       category: "Health",
       favorite: "12K",
-      seen: "30K",
+      seen: "309K",
       time: "22 Hours ago",
       title: "Kue",
       image:
@@ -180,7 +180,7 @@ List<News> makanBurukList = [
       estimate: "6",
       category: "Health",
       favorite: "21K",
-      seen: "40.2K",
+      seen: "40.20K",
       time: "8 Hours ago",
       title:
       "Kentang Goreng",
@@ -196,7 +196,7 @@ List<News> makanBurukList = [
     estimate: "3",
     category: "Health",
     favorite: "700",
-    seen: "4.5K",
+    seen: "4.51K",
     time: "4 hours ago",
     title:
     "Mie Telur",
@@ -212,7 +212,7 @@ List<News> makanBurukList = [
       estimate: "5",
       category: "Health",
       favorite: "502",
-      seen: "1.2K",
+      seen: "1.22K",
       time: "10 hours ago",
       title:
       "Soda",
@@ -228,7 +228,7 @@ List<News> makanBurukList = [
       estimate: "12",
       category: "Health",
       favorite: "23K",
-      seen: "40.5K",
+      seen: "40.53K",
       time: "12 Hours ago",
       title:
       "Keju",
@@ -244,7 +244,7 @@ List<News> makanBurukList = [
       estimate: "8",
       category: "Health",
       favorite: "12K",
-      seen: "30K",
+      seen: "304K",
       time: "22 Hours ago",
       title:
       "Gorengan",
@@ -263,7 +263,7 @@ List<News> makanBaikList = [
     estimate: "3",
     category: "Health",
     favorite: "700",
-    seen: "4.5K",
+    seen: "4.55K",
     time: "4 hours ago",
     title:
     "Sayuran hijau",
@@ -279,7 +279,7 @@ List<News> makanBaikList = [
       estimate: "5",
       category: "Health",
       favorite: "502",
-      seen: "1.2K",
+      seen: "1.26K",
       time: "10 hours ago",
       title:
       "Kentang",
@@ -295,7 +295,7 @@ List<News> makanBaikList = [
       estimate: "12",
       category: "Health",
       favorite: "23K",
-      seen: "40.5K",
+      seen: "40.57K",
       time: "12 Hours ago",
       title:
       "Ikan",
@@ -311,7 +311,7 @@ List<News> makanBaikList = [
       estimate: "8",
       category: "Health",
       favorite: "12K",
-      seen: "30K",
+      seen: "308K",
       time: "22 Hours ago",
       title:
       "Oatmeal dan gandum murni",
@@ -327,7 +327,7 @@ List<News> makanBaikList = [
       estimate: "6",
       category: "Health",
       favorite: "21K",
-      seen: "40.2K",
+      seen: "40.29K",
       time: "8 Hours ago",
       title:
       "Tomat",
@@ -346,7 +346,7 @@ List<News> olahragaList = [
       estimate: "3",
       category: "Health",
       favorite: "700",
-      seen: "4.5K",
+      seen: "4.50K",
       time: "4 hours ago",
       title:
       "Tips Olahraga Untuk Pasien Penyakit Jantung",
@@ -362,7 +362,7 @@ List<News> olahragaList = [
       estimate: "3",
       category: "Health",
       favorite: "700",
-      seen: "4.5K",
+      seen: "4.51K",
       time: "4 hours ago",
       title:
       "Hal Yang Perlu Diwaspadai Saat Berolahraga",
@@ -378,7 +378,7 @@ List<News> olahragaList = [
       estimate: "3",
       category: "Health",
       favorite: "700",
-      seen: "4.5K",
+      seen: "4.53K",
       time: "4 hours ago",
       title:
       "Penuhi Kebutuhan Nutrisi",
@@ -394,7 +394,7 @@ List<News> olahragaList = [
       estimate: "3",
       category: "Health",
       favorite: "700",
-      seen: "4.5K",
+      seen: "4.531K",
       time: "4 hours ago",
       title:
       "Jalan kaki",
@@ -410,7 +410,7 @@ List<News> olahragaList = [
       estimate: "5",
       category: "Health",
       favorite: "502",
-      seen: "1.2K",
+      seen: "1.245K",
       time: "10 hours ago",
       title:
       "Yoga",
@@ -426,7 +426,7 @@ List<News> olahragaList = [
       estimate: "12",
       category: "Health",
       favorite: "23K",
-      seen: "40.5K",
+      seen: "40.556K",
       time: "12 Hours ago",
       title:
       "Tai chi",
@@ -442,7 +442,7 @@ List<News> olahragaList = [
       estimate: "8",
       category: "Health",
       favorite: "12K",
-      seen: "30K",
+      seen: "3.067K",
       time: "22 Hours ago",
       title:
       "Berenang",
@@ -458,7 +458,7 @@ List<News> olahragaList = [
       estimate: "6",
       category: "Health",
       favorite: "21K",
-      seen: "40.2K",
+      seen: "40.278K",
       time: "8 Hours ago",
       title:
       "Bersepeda",

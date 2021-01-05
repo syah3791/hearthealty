@@ -4,6 +4,7 @@ import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/pages/education/read_news_view.dart';
 import 'package:hearthealthy/widget/primary_card.dart';
 import 'package:hearthealthy/widget/secondary_card.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
 class HomeView extends StatefulWidget with NavigationStates{
@@ -14,89 +15,75 @@ class HomeView extends StatefulWidget with NavigationStates{
 class _HomeState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    var mediaQueryData = MediaQuery.of(context);
+    final double widthScreen = mediaQueryData.size.width;
+    final double heightScreen = mediaQueryData.size.height;
     return Scaffold(
         backgroundColor: Colors.white54,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(120.0),
-          child: Column(
-            children: [
-              SizedBox(height: 75.0),
-              Center(
-                child: Text(
-                  "Beranda Jantung Sehat",
-                  // textAlign: TextAlign.end,
-                  style: kNonActiveTabStyle.copyWith(color: Color(0xffff5e56),fontWeight: FontWeight.bold),
-                ),
+        body: new Stack(
+          children: <Widget>[
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(image: new AssetImage("assets/images/background1.jpeg"), fit: BoxFit.cover,),
               ),
-            ],
-          ),
-        ),
-        body: Container(
-          child: ListView(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 300.0,
-                padding: EdgeInsets.only(left: 18.0),
-                child: ListView.builder(
-                  itemCount: beritaList.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    var news = beritaList[index];
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ReadNewsView(news: news),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12.0),
-                        child: PrimaryCard(news: news),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              SizedBox(height: 25.0),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 19.0),
-                  child: Text("BACAAN LAIN",
-                      style: kNonActiveTabStyle.copyWith(color: Color(0xffff5e56))),
-                ),
-              ),
-              ListView.builder(
-                itemCount: randomList.length,
-                scrollDirection: Axis.vertical,
+            ),
+            new Container(
+              height: heightScreen,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 70,),
+                  Center(
+                    child:Text(
+                      "Beranda Jantung Sehat",
+                      style: kNonActiveTabStyle.copyWith(color: Colors.red,fontWeight: FontWeight.bold),
+                  )),
+              StaggeredGridView.countBuilder(
                 shrinkWrap: true,
-                physics: ScrollPhysics(),
-                itemBuilder: (context, index) {
-                  var recent = randomList[index];
-                  return InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ReadNewsView(news: recent),
+                physics: BouncingScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 4.0,
+                crossAxisSpacing: 4.0,
+                itemCount: beritaList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Center(
+                      child: Container(
+                        padding:EdgeInsets.fromLTRB(15.0, 35.0, 10.0, 35.0),
+                        width: widthScreen/2,
+                        // height: widthScreen/4,
+                        child:RaisedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ReadNewsView(news: beritaList[index]),
+                                ),
+                              );
+                            },
+                            padding:EdgeInsets.fromLTRB(18.0, 10.0, 18.0, 10.0),
+                            shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(6.0) ),
+                            color: Color(0xffddffff),
+                            child: Table(
+                                children: [
+                                  TableRow(
+                                      children: [
+                                        Text(
+                                          beritaList[index].title,
+                                          style: TextStyle(color: Colors.black)
+                                        ),
+                                      ]
+                                  )
+                                ]
+                            )
                         ),
-                      );
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 135.0,
-                      margin: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-                      child: SecondaryCard(news: recent),
-                    ),
-                  );
+                      ));
                 },
+                staggeredTileBuilder: (int index) =>
+                new StaggeredTile.count(index == 5-1 ? 2 : 1, 1),
               )
-            ],
-          ),
+                ]
+            ))
+          ]
         )
     );
   }

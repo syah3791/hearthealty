@@ -2,11 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:hearthealthy/pages/education/home_view.dart';
 import 'package:hearthealthy/pages/education/pola_hidup_view.dart';
 import 'package:hearthealthy/pages/education/olahraga_view.dart';
+import 'package:hearthealthy/pages/ppg/ppg_view.dart';
 
 enum NavigationEvents {
   HomeScreenClickedEvent,
   PolaHidupClickedEvent,
   OlahragaClickedEvent,
+  PPGClickedEvent,
 }
 
 abstract class NavigationStates {}
@@ -26,6 +28,9 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
         break;
       case NavigationEvents.OlahragaClickedEvent:
         yield OlahragaView();
+        break;
+      case NavigationEvents.PPGClickedEvent:
+        yield PPGView();
         break;
     }
   }

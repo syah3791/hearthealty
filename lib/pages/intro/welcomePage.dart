@@ -23,21 +23,22 @@ class _WelcomePageState extends State<WelcomePage> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(vertical: 13),
+        margin: EdgeInsets.only(right: 4.0, left: 5.0),
+        padding: EdgeInsets.symmetric(vertical: 13,),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
+            borderRadius: BorderRadius.all(Radius.circular(80)),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                  color: Color(0xffdf8e33).withAlpha(100),
+                  color: Colors.grey.withAlpha(90),
                   offset: Offset(2, 4),
                   blurRadius: 8,
                   spreadRadius: 2)
             ],
-            color: Colors.white),
+            color: Colors.blue),
         child: Text(
-          'Login',
-          style: TextStyle(fontSize: 20, color: Color(0xffff5e56)),
+          'MASUK',
+          style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
     );
@@ -51,14 +52,21 @@ class _WelcomePageState extends State<WelcomePage> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
+        margin: EdgeInsets.only(right: 5.0, left: 4.0),
         padding: EdgeInsets.symmetric(vertical: 13),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          border: Border.all(color: Colors.white, width: 2),
-        ),
+            borderRadius: BorderRadius.all(Radius.circular(80)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Colors.grey.withAlpha(50),
+                  offset: Offset(2, 4),
+                  blurRadius: 8,
+                  spreadRadius: 2)
+            ],
+            color: Colors.lightGreen),
         child: Text(
-          'Register now',
+          'DAFTAR',
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
@@ -96,43 +104,48 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body:SingleChildScrollView(
-        child:Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Colors.grey.shade200,
-                      offset: Offset(2, 4),
-                      blurRadius: 5,
-                      spreadRadius: 2)
-                ],
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Colors.grey.shade200, Color(0xffff5e56)])),
-            child: Column(
+        child:Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TitleName(),
                 SizedBox(
                   height: 80,
                 ),
-                _submitButton(),
+                TitleName(),
+                SizedBox(
+                  height: 30,
+                ),
+                Card(
+                  semanticContainer: true,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  child: Image.asset("assets/images/background1.jpeg", fit: BoxFit.cover,),
+                    margin: EdgeInsets.all(10),
+
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                _signUpButton(),
+                Table(
+                  children: [
+                    TableRow(
+                      children: [
+                        _submitButton(),
+                        _signUpButton(),
+                      ]
+                    )
+                  ]
+                ),
                 SizedBox(
                   height: 20,
                 ),
-                _label()
+                // _label()
               ],
             ),
-          ),
       ),
     );
   }

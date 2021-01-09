@@ -12,7 +12,7 @@ class ReadNewsView extends StatelessWidget {
     var rng = new Random();
     int tag = rng.nextInt(100);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffdfd7ca),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
         child: Center(

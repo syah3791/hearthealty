@@ -94,20 +94,20 @@ List<News> beritaList = [
     'Beberapa faktor yang dapat memengaruhi penyakit jantung koroner,meliputi:\n\n  •	Usia lanjut. Semakin tua, arteri akan semakin menyempit dan rapuh.\n  •	Pria lebih memiliki risiko terkena penyakit jantung koroner daripada wanita.\n  •	Apabila ada anggota keluarga yang mengidap gangguan jantung, maka risiko PJK meningkat.\n  •	Merokok. Nikotin dapat menyebabkan penyempitan arteri sementara karbon monoksida menyebabkan kerusakan pembuluh.\n  •	Memiliki riwayat tekanan darah tinggi dan/atau kadar lemak darah yang tinggi.\n  •	Memiliki trauma mental atau stres psikologis berat jangka waktu panjang.'
   ),
   News(
-    author: "Darrell Etherington",
-    estimate: "6",
-    category: "Health",
-    favorite: "21K",
-    seen: "40.25K",
-    time: "8 Hours ago",
-    title:
-    "Diagnosis Penyakit Jantung Koroner",
-    image:
-    "https://cdn0-production-images-kly.akamaized.net/82YkPm54TED9szRGFk6rjwxpyCk=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3213603/original/069540200_1597830972-doctor-holding-red-heart_38810-6746__1_.jpg",
-    subtitle:
-    "Diagnosis penyakit jantung koroner dapat dilakukan dengan wawancara, pemeriksaan fisik, ataupun pemeriksaan laboratorium. Beberapa jenis pemeriksaan untuk penyakit ini, meliputi:",
-    content:
-    'Diagnosis penyakit jantung koroner dapat dilakukan dengan wawancara, pemeriksaan fisik, ataupun pemeriksaan laboratorium. Beberapa jenis pemeriksaan untuk penyakit ini, meliputi:\n\n   •	Elektrokardiogram (EKG)\n   Pemeriksaan ini dilakukan untuk mendeteksi adanya kelainan-kelainan pada irama jantung.\n\n   •	Ekokardiogram\n   Pemeriksaan ini dilakukan untuk mengetahui sejauh mana kerusakan berefek pada fungsi jantung.\n\n   •	Stress test\n   Jika seseorang memiliki faktor risiko, dokter akan menyarankan stress test. Pada pemeriksaan ini, ia akan diminta untuk berjalan atau bersepeda statis sementara dokter akan mengukur aktivitas jantung dengan EKG.'
+      author: "Darrell Etherington",
+      estimate: "6",
+      category: "Health",
+      favorite: "21K",
+      seen: "40.25K",
+      time: "8 Hours ago",
+      title:
+      "Diagnosis Penyakit Jantung Koroner",
+      image:
+      "https://cdn0-production-images-kly.akamaized.net/82YkPm54TED9szRGFk6rjwxpyCk=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3213603/original/069540200_1597830972-doctor-holding-red-heart_38810-6746__1_.jpg",
+      subtitle:
+      "Sebagai langkah awal diagnosis, dokter akan menanyakan gejala yang dialami, serta memeriksa faktor risiko yang dimiliki pasien.",
+      content:
+      'Sebagai langkah awal diagnosis, dokter akan menanyakan gejala yang dialami, serta memeriksa faktor risiko yang dimiliki pasien. Bila pasien berisiko terserang penyakit jantung koroner (PJK), dokter akan memeriksa tekanan darah pasien.\n Dokter juga akan menjalankan tes darah, untuk mengukur kadar kolesterol pasien. Agar didapat hasil yang akurat, pasien akan diminta berpuasa 12 jam sebelum tes dilakukan.\n Kemudian, untuk memastikan diagnosis, dokter akan menjalankan beberapa metode pemeriksaan yang meliputi:\n\n   Elektrokardiografi (EKG)\n EKG bertujuan merekam aktivitas listrik jantung pasien. Melalui EKG, dokter dapat mengetahui apakah pasien pernah atau sedang mengalami serangan jantung. EKG juga dapat membantu dokter mengetahui detak dan irama jantung pasien tergolong normal atau tidak.Pada sejumlah kasus, dokter akan menyarankan pasien menjalani Holter monitoring. Sama seperti EKG, pemeriksaan ini bertujuan merekam aktivitas listrik jantung. Bedanya, pasien akan memakai perangkat kecil yang disebut monitor Holter. Alat tersebut akan dikalungkan di dada pasien, selama pasien beraktivitas dalam 24 jam.\n\n   Foto Rontgen\n Foto Rontgen di bagian dada dapat dilakukan guna melihat kondisi jantung, paru-paru, dan pembuluh darah. Melalui foto Rontgen dada, dokter dapat mengetahui bila ukuran jantung membesar atau terdapat gangguan pada paru-paru.\n\n   CT scan dan MRI scan\n Dua tes pencitraan ini dapat dilakukan untuk melihat kondisi jantung dengan lebih detail, yang tidak dapat terlihat pada pemeriksaan foto Rontgen. Pemeriksaan ini juga bisa memperlihatkan bila ada penumpukan kalsium di pembuluh darah, yang dapat memicu penyakit jantung koroner.\n\n   Uji tekanan (stress test)\n Bila gejala yang dialami pasien lebih sering muncul saat sedang beraktivitas, dokter akan menyarankan uji tekanan. Tes ini bertujuan mengukur kerja jantung pasien ketika beraktivitas.\n Dalam uji tekanan, pasien akan diminta berjalan di treadmill, atau mengayuh sepeda statis, sambil menjalani pemeriksaan EKG di saat yang bersamaan. Pada saat pasien tidak dapat beraktivitas, dokter akan memberi obat untuk meningkatkan detak jantung sambil menjalankan tes MRI.\n\n   Ekokardiografi\n Ekokardiografi adalah pemeriksaan dengan menggunakan gelombang suara (seperti USG), untuk menampilkan gambaran jantung pasien di monitor. Selama ekokardiografi dilakukan, dokter dapat memeriksa, apakah semua bagian dinding jantung berfungsi baik dalam memompa darah.\n Dinding jantung yang bergerak lemah, bisa disebabkan oleh kekurangan oksigen, atau adanya kerusakan akibat serangan jantung. Hal tersebut bisa menjadi tanda PJK.\n\n   Pemeriksaan enzim jantung\n Pemeriksaan enzim jantung dilakukan dengan mengambil sampel darah pasien, untuk diperiksa di laboratorium. Melalui pemeriksaan ini, dokter dapat mengetahui kadar troponin T dalam darah pasien.\n Troponin adalah protein yang dihasilkan sel jantung yang mengalami kerusakan. Pada seseorang yang terkena serangan jantung, kadar troponin akan meningkat dalam 3-12 jam setelahnya. Kadar troponin akan mencapai puncaknya dalam 1-2 hari, dan kembali normal setelah 5-14 hari.\n Kadar troponin terkait secara langsung dengan tingkat kerusakan otot jantung. Dengan kata lain, makin tinggi kadar troponin dalam darah, makin parah pula kerusakan jantung yang dialami.\n\n   Pemeriksaan radionuklir\n Pemeriksaan radionuklir digunakan untuk membantu mengukur aliran darah ke otot jantung, saat beristirahat dan saat beraktivitas. Tes ini hampir sama seperti uji tekanan, yaitu dengan meminta pasien berjalan di treadmillatau mengayuh sepeda statis. Bedanya, tes ini dapat menunjukkan informasi yang lebih lengkap dengan menampilkan gambar jantung pasien.\n Sebelum tes dilakukan, pasien akan disuntikkan zat radioaktif yang disebut isotop. Bila pasien tidak dapat berjalan di treadmill atau menggunakan sepeda statis, dokter akan memberikan obat untuk meningkatkan detak jantung pasien. Kemudian, kamera akan diarahkan ke dada pasien, dan menangkap gambar saat isotop mengalir ke jantung.\n\n    Kateterisasi jantung dan angiografi koroner\n Katerisasi jantung bertujuan untuk melihat kondisi jantung, dengan memasukkan kateter melalui pembuluh darah di lengan atau paha untuk diarahkan ke jantung. Kemudian, dokter akan menjalankan prosedur angiografi koroner. Prosedur ini dilakukan dengan menyuntikkan cairan kontras, dan menggunakan foto Rontgen untuk melihat aliran darah menuju jantung. Melalui angiografi koroner, dokter dapat mengetahui bila ada penyumbatan di pembuluh darah.'
   ),
 ];
 
@@ -337,6 +337,71 @@ List<News> makanBaikList = [
       "Warna merah alami pada tomat mengandung antioksidan likopen, yang mampu menurunkan risiko penyakit jantung dan stroke. Penelitian Nutrition Journal menyebutkan minum jus tomat tanpa gula selama 8 minggu mampu mengurangi kadar trigliserida,",
       content:
       'Warna merah alami pada tomat mengandung antioksidan likopen, yang mampu menurunkan risiko penyakit jantung dan stroke. Penelitian Nutrition Journal menyebutkan minum jus tomat tanpa gula selama 8 minggu mampu mengurangi kadar trigliserida, yang menghambat aliran darah dan memicu serangan jantung.Jenis makanan yang baik untuk penyakit jantung di atas mungkin ada yang tak cocok seleranya di lidah Anda atau terlalu mahal.Tak usah bingung, Anda bisa menggantinya dengan buah yang harganya lebih terjangkau. Buah untuk penyakit jantung antara lain alpukat, anggur, pisang, jeruk, melon, pepaya, stroberi, dan apel.Kandungan vitamin pada buah-buahan tersebut baik dan kaya akan serat sehingga baik untuk jantung.'
+  ),
+
+  News(
+      author: "BBC News",
+      estimate: "5",
+      category: "Health",
+      favorite: "502",
+      seen: "1.26K",
+      time: "10 hours ago",
+      title:
+      "Ubi Jalar",
+      image:
+      "https://image-cdn.medkomtek.com/jJ2hXbw-k4-j8K9Fm82i5loFBno=/1200x675/smart/klikdokter-media-buckets/medias/1459093/original/029007600_1483460306-Benarkah-Ubi-Bisa-Bantu-Atasi-Osteoporosis.jpg",
+      subtitle:
+      "Umbi yang punya rasa manis ini mengandung vitamin A yang menyehatkan tubuh, termasuk jantung Anda. Kandungan serat dan nutrisi lain diketahui dapat mengurangi kadar kolesterol dalam darah.",
+      content:
+      'Umbi yang punya rasa manis ini mengandung vitamin A yang menyehatkan tubuh, termasuk jantung Anda. Kandungan serat dan nutrisi lain diketahui dapat mengurangi kadar kolesterol dalam darah.\n  Untuk nutrisi terbaik, sebaiknya Anda pilih ubi jalar yang berwarna oranye atau ungu. Anda bisa menikmati ubi jalar dengan direbus, dipanggang, atau ditambahkan pada sayur. Namun bagi Anda yang memiliki penyakit ginjal, jangan mengonsumsi ibu terlalu banyak karena umbi ini mengandung oksalat yang cukup tinggi.'
+  ),
+  News(
+      author: "Jon Fingas",
+      estimate: "12",
+      category: "Health",
+      favorite: "23K",
+      seen: "40.57K",
+      time: "12 Hours ago",
+      title:
+      "Buah Ceri",
+      image:
+      'https://photo.jpnn.com/arsip/normal/2018/08/22/buah-ceri-foto-pixabay.jpg',
+      subtitle:
+      "Buah ceri bisa menjadi makanan pilihan untuk pasien penyakit jantung. ",
+      content:
+      'Buah ceri bisa menjadi makanan pilihan untuk pasien penyakit jantung. Alasannya, karena ceri kaya dengan antioksidan polifenol dan karotenoid, serat, serta vitamin C. Semua nutrisi tersebut dapat meningkatkan fungsi jantung dan pembuluh darah. Pilihlah buah ceri segar untuk mendapatkan semua manfaatnya.'
+  ),
+  News(
+      author: "Kirsten Korosec",
+      estimate: "8",
+      category: "Health",
+      favorite: "12K",
+      seen: "308K",
+      time: "22 Hours ago",
+      title:
+      "Anggur",
+      image:
+      'https://ecs7.tokopedia.net/img/cache/700/VqbcmM/2020/10/10/0c0f1e1a-93e7-4be8-a558-75d9876009d8.jpg',
+      subtitle:
+      "Senyawa aktif dalam buah anggur dapat mengurangi ketegangan atau kekakuan pada pembuluh darah arteri. Kulit anggur merah yang mengandung antioksidan polifenol juga bisa memelihara fungsi endotel.",
+      content:
+      'Senyawa aktif dalam buah anggur dapat mengurangi ketegangan atau kekakuan pada pembuluh darah arteri. Kulit anggur merah yang mengandung antioksidan polifenol juga bisa memelihara fungsi endotel.\n  Konsumsi buah anggur juga dipercaya mampu mengurangi lemak darah, menurunkan tekanan darah, dan meningkatkan fungsi trombosit sehingga mencegah pembentukan plak. Dengan begitu, risiko penyakit jantung  dapat ditekan.'
+  ),
+  News(
+      author: "Darrell Etherington",
+      estimate: "6",
+      category: "Health",
+      favorite: "21K",
+      seen: "40.29K",
+      time: "8 Hours ago",
+      title:
+      "Alpukat",
+      image:
+      "https://fitshop-production.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2020/04/20125115/Alpukat-Muda.jpg",
+      subtitle:
+      "Zat-zat yang terkandung di dalam buah alpukat, seperti asam lemak tak jenuh, antioksidan polifenol, karotenoid, vitamin E, fitosterol, dan squalene bersifat larut dalam lemak. Semua senyawa tersebut sangat populer dengan manfaatnya dalam menurunkan kadar kolesterol.",
+      content:
+      'Zat-zat yang terkandung di dalam buah alpukat, seperti asam lemak tak jenuh, antioksidan polifenol, karotenoid, vitamin E, fitosterol, dan squalene bersifat larut dalam lemak. Semua senyawa tersebut sangat populer dengan manfaatnya dalam menurunkan kadar kolesterol.\n  Daging buah alpukat juga mengandung acetogenin yang bisa menghambat penggumpalan platelet atau keping darah. Manfaat acetogenin ini kemungkinan besar mencegah terjadinya penggumpalan darah di dalam pembuluh arteri.'
   ),
 ];
 

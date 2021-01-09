@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:device_info/device_info.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthHelper {
   static FirebaseAuth _auth = FirebaseAuth.instance;
@@ -35,7 +36,9 @@ class AuthHelper {
     return res.user;
   }
 
-  static logOut() {
+  static logOut() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences.clear();
     GoogleSignIn().signOut();
     return _auth.signOut();
   }

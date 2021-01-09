@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hearthealthy/widget/constants.dart';
 import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/pages/education/read_news_view.dart';
-import 'package:hearthealthy/widget/primary_card.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
 class PolaHidupView extends StatefulWidget with NavigationStates{
@@ -13,102 +13,126 @@ class PolaHidupView extends StatefulWidget with NavigationStates{
 class _PolaHidupState extends State<PolaHidupView> {
   @override
   Widget build(BuildContext context) {
+    var mediaQueryData = MediaQuery.of(context);
+    final double widthScreen = mediaQueryData.size.width;
+    final double heightScreen = mediaQueryData.size.height;
     return Scaffold(
-        backgroundColor: Colors.white54,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(120.0),
-            child: Column(
-              children: [
-                SizedBox(height: 75.0),
-                Center(
-                  child: Text(
-                    "POLA HIDUP SEHAT",
-                    // textAlign: TextAlign.end,
-                    style: kNonActiveTabStyle.copyWith(color: Color(0xffff5e56), fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-        ),
-        body: Container(
-          child: ListView(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 19.0),
-                  child: Text("MAKANAN BAIK",
-                      style: kNonActiveTabStyle.copyWith(color: Color(0xffff5e56))),
+        backgroundColor: Color(0xffdfd7ca),
+        body: new Stack(
+            children: <Widget>[
+              new Container(
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(image: new AssetImage("assets/images/pola_makan.jpg", ), fit: BoxFit.scaleDown,),
                 ),
               ),
-              SizedBox(height: 10.0),
-              Container(
-                width: double.infinity,
-                height: 300.0,
-                padding: EdgeInsets.only(left: 18.0),
-                child: ListView.builder(
-                  itemCount: makanBaikList.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    var makanBaik = makanBaikList[index];
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ReadNewsView(news: makanBaik),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12.0),
-                        child: PrimaryCard(news: makanBaik),
-                      ),
-                    );
-                  },
-                ),
-              ),
-              SizedBox(height: 25.0),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 19.0),
-                  child: Text("MAKANAN BURUK",
-                      style: kNonActiveTabStyle.copyWith(color: Color(0xffff5e56))),
-                ),
-              ),
-              SizedBox(height: 10.0),
-              Container(
-                width: double.infinity,
-                height: 300.0,
-                padding: EdgeInsets.only(left: 18.0),
-                child: ListView.builder(
-                  itemCount: makanBurukList.length,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    var makanBuruk = makanBurukList[index];
-                    return InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ReadNewsView(news: makanBuruk),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(right: 12.0),
-                        child: PrimaryCard(news: makanBuruk),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
+              new  Container(
+                  height: heightScreen,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        SizedBox(height:10),
+                        Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                            Center(
+                              child: Container(
+                                  margin: EdgeInsets.fromLTRB(20.0, 10.0, 10.0, 10.0),
+                                  padding:EdgeInsets.all(4),
+                                  child:Text(
+                                    "Makanan Baik",
+                                    style: kNonActiveTabStyle.copyWith(color: Colors.red,fontWeight: FontWeight.bold),
+                                  )
+                              )
+                            ),
+                            Center(
+                                child: Container(
+                                    margin: EdgeInsets.fromLTRB(30.0, 10.0, 10.0, 10.0),
+                                    padding:EdgeInsets.all(4),
+                                    // color: Color(0xfffffff5),
+                                    child:Text(
+                                      "Makanan Buruk",
+                                      style: kNonActiveTabStyle.copyWith(color: Colors.red,fontWeight: FontWeight.bold),
+                                    )
+                                )
+                            )
+                          ]
+                        ),
+                        Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                width:widthScreen/2,
+                                  // crossAxisAlignment: CrossAxisAlignment.start,
+                                  // children: <Widget>[
+                                    child:ListView.builder(
+                                      itemCount: makanBaikList.length,
+                                      scrollDirection: Axis.vertical,
+                                      shrinkWrap: true,
+                                      physics: ScrollPhysics(),
+                                      itemBuilder: (BuildContext context, int index) {
+                                        return _tombol(makanBaikList[index]);
+                                      },
+                                    ),
+                                  // ]
+                              ),
+                              Container(
+                                width:widthScreen/2,
+                                // crossAxisAlignment: CrossAxisAlignment.start,
+                                // children: <Widget>[
+                                child:ListView.builder(
+                                  itemCount: makanBurukList.length,
+                                  scrollDirection: Axis.vertical,
+                                  shrinkWrap: true,
+                                  physics: ScrollPhysics(),
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return _tombol(makanBurukList[index]);
+                                  },
+                                ),
+                                // ]
+                              ),
+                          ]
+                        )
+                      ],
+                    )
+                  )
+              )
+            ]
         )
     );
+  }
+
+  Widget _tombol(item){
+    return Center(
+        child: Container(
+          margin : EdgeInsets.all(2),
+          padding:EdgeInsets.fromLTRB(15.0, 10.0, 10.0, 10.0),
+          // height: widthScreen/4,
+          child:RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ReadNewsView(news: item),
+                  ),
+                );
+              },
+              padding:EdgeInsets.fromLTRB(18.0, 10.0, 18.0, 10.0),
+              shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(6.0) ),
+              color: Color(0xffddffff),
+              child: Table(
+                  children: [
+                    TableRow(
+                        children: [
+                          Text(
+                              item.title,
+                              style: TextStyle(color: Colors.black)
+                          ),
+                        ]
+                    )
+                  ]
+              )
+          ),
+        ));
   }
 }

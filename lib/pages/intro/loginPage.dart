@@ -5,7 +5,7 @@ import 'package:hearthealthy/pages/intro/signupPage.dart';
 import 'package:hearthealthy/main.dart';
 import 'package:hearthealthy/service/auth_service.dart';
 import 'package:hearthealthy/widget/title.dart';
-import 'package:hearthealthy/widget/bezierContainer.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -164,58 +164,33 @@ class _LoginPageState extends State<LoginPage> {
       }
     },
       child: Container(
-        height: 50,
-        margin: EdgeInsets.symmetric(vertical: 20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-                color: Colors.grey.withAlpha(100),
-                offset: Offset(2, 4),
-                blurRadius: 8,
-                spreadRadius: 2)
-          ],
-        ),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(5),
-                      topLeft: Radius.circular(5)),
+        margin: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
+        child: new RaisedButton(
+            padding: EdgeInsets.all(1.0),
+            color: const Color(0xff4285F4),
+            child: new Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: SvgPicture.asset(
+                    'assets/icons/google-icon.svg',
+                    height: 18.0,
+                  ),
                 ),
-                alignment: Alignment.center,
-                child: Icon(Icons.mail_outline, color: Colors.blue)
-                // child: Text('G',
-                //     style: TextStyle(
-                //         color: Colors.blue,
-                //         fontSize: 25,
-                //         fontWeight: FontWeight.w400)),
-              ),
-            ),
-            Expanded(
-              flex: 5,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(5),
-                      topRight: Radius.circular(5)),
-                ),
-                alignment: Alignment.center,
-                child: Text('Masuk Dengan Google',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400)),
-              ),
-            ),
-          ],
-        ),
-      )
+                Container(
+                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                    child: new Text(
+                      "Masuk menggunakan Google",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    )),
+              ],
+            )),
+      ),
     );
   }
 
@@ -266,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       key: _scaffoldState,
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xfffffff5),
         body: Container(
       height: height,
             child: Stack(
@@ -291,7 +266,7 @@ class _LoginPageState extends State<LoginPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Image.asset("assets/images/background1.jpeg", fit: BoxFit.cover,),
+                          child: Image.asset("assets/images/login.jpg", fit: BoxFit.cover,),
                           margin: EdgeInsets.all(10),
 
                         ),

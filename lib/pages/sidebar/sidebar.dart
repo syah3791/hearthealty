@@ -165,7 +165,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           ),
                       ),
                       Divider(
-                        height: 64,
+                        height: 30,
                         thickness: 0.5,
                         color: Colors.white.withOpacity(0.3),
                         indent: 32,
@@ -179,43 +179,53 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                           BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.HomeScreenClickedEvent);
                         },
                       ),
-                      MenuItem(
-                        icon: Icons.person,
-                        title: "Pola Hidup Sehat",
-                        onTap: () {
-                          onIconPressed();
-                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.PolaHidupClickedEvent);
-                        },
-                      ),
-                      MenuItem(
-                        icon: Icons.directions_run,
-                        title: "Olahraga",
-                        onTap: () async {
-                          onIconPressed();
-                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.OlahragaClickedEvent);
-                        },
+                      ExpansionTile(
+                        title: Text("Pola Hidup Sehat", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 21, color: Colors.white),),
+                        children: <Widget>[
+                          MenuItem(
+                            icon: Icons.person,
+                            title: "Pola Makan",
+                            onTap: () {
+                              onIconPressed();
+                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.PolaHidupClickedEvent);
+                            },
+                          ),
+                          MenuItem(
+                            icon: Icons.directions_run,
+                            title: "Olahraga",
+                            onTap: () async {
+                              onIconPressed();
+                              BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.OlahragaClickedEvent);
+                            },
+                          ),
+                        ],
                       ),
                       MenuItem(
                         icon: Icons.camera_alt,
                         title: "PPG",
                         onTap: () async {
                           onIconPressed();
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return PPGView();
-                          }));
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.PPGClickedEvent);
+                          // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          //   return PPGView();
+                          // }));
                         },
                       ),
                       Divider(
-                        height: 64,
+                        height: 20,
                         thickness: 0.5,
                         color: Colors.white.withOpacity(0.3),
                         indent: 32,
                         endIndent: 32,
                       ),
-                      // MenuItem(
-                      //   icon: Icons.settings,
-                      //   title: "Settings",
-                      // ),
+                      MenuItem(
+                        icon: Icons.settings,
+                        title: "Data Pasien",
+                        onTap: () async {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.SettingClickedEvent);
+                        },
+                      ),
                       MenuItem(
                         icon: Icons.exit_to_app,
                         title: "Logout",
@@ -286,6 +296,8 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     );
   }
 }
+
+
 
 class CustomMenuClipper extends CustomClipper<Path> {
   @override

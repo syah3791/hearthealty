@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:hearthealthy/pages/intro/welcomePage.dart';
 import 'package:hearthealthy/pages/sidebar/sidebar_layout.dart';
+import 'package:hearthealthy/pages/sidebar/menu_view.dart';
 
 class SplashScreenPage extends StatefulWidget {
   bool isLogin;
@@ -25,7 +26,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
-          return widget.isLogin ? SideBarLayout(user:widget.user) : WelcomePage();
+          return widget.isLogin ? MenuView(user:widget.user) : WelcomePage();
         }),
       );
     });

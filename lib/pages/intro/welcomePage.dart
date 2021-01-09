@@ -104,7 +104,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xfffffff5),
       body:SingleChildScrollView(
         child:Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,7 +115,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
                 TitleName(),
                 SizedBox(
-                  height: 30,
+                  height: 70,
                 ),
                 Card(
                   semanticContainer: true,
@@ -123,12 +123,12 @@ class _WelcomePageState extends State<WelcomePage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                  child: Image.asset("assets/images/background1.jpeg", fit: BoxFit.cover,),
+                  child: Image.asset("assets/images/heart_beating_1.gif", fit: BoxFit.cover,),//height:300, width:231),
                     margin: EdgeInsets.all(10),
 
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 70,
                 ),
                 Table(
                   children: [

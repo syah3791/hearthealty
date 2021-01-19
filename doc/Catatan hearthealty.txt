@@ -1,0 +1,25 @@
+Pengerjaan
+ - membuat tampilan menu utama yaitu beranda, makanan, olahraga
+	- membuat daftar artikel dan isinya
+	- membuat tampilan
+	- menampilakn daftar artikel
+ - membuat tampilan login
+	- https://medium.com/swlh/flutter-login-registration-using-firebase-1bef34007b91
+ - menghubungkan login ke firebase 	
+	- https://firebase.google.com/docs/flutter/setup
+	Generate sha1 for secure(jika tidak tidak bisa connect ke firebase user
+	- https://stackoverflow.com/questions/51845559/generate-sha-1-for-flutter-app
+	- Aktifkan menu user authen, yang diaktifkan menggunakan email dan google
+	- Bisa menambah facebook jika ingin
+ - membuat notifikasi
+ 	- membuat initialsisasi notif menejer
+	- membuat dftar notif jika berhasil login
+	- menghapus notif jika logout
+ - membuat deteksi
+	- inisialisasi camera
+	- menghitung frekuensi
+	- menghitung bpm, sp dan dp
+ - membuat hasil lab
+	- membuat input
+	- mengecek input
+	- menampilkan hasil

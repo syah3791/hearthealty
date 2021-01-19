@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:hearthealthy/pages/intro/welcomePage.dart';
-import 'package:hearthealthy/pages/sidebar/sidebar_layout.dart';
 import 'package:hearthealthy/pages/sidebar/menu_view.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -26,6 +25,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) {
+          ////////Jika isLogin true makan diarahkan ke menu_view jika tidak diarahkan ke welcomePage
           return widget.isLogin ? MenuView(user:widget.user) : WelcomePage();
         }),
       );

@@ -5,12 +5,11 @@ import 'package:flutter_better_camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 import 'chart.dart';
 import 'package:simple_timer/simple_timer.dart';
 
 
-class PPGView extends StatefulWidget with NavigationStates{
+class PPGView extends StatefulWidget{
   var parent;
   PPGView({this.parent});
   @override
@@ -54,7 +53,7 @@ class PPGViewState extends State<PPGView> with SingleTickerProviderStateMixin {
     //     });
     //   });
   }
-
+ //Mengambil data dari shared_preferences
   _onInit() async {
     final SharedPreferences prefs = await _prefs;
     try{
@@ -70,7 +69,7 @@ class PPGViewState extends State<PPGView> with SingleTickerProviderStateMixin {
       _onNullVar();
     }
   }
-
+//Warning jika data belum ada
   _onNullVar() async {
     showDialog(
         barrierDismissible: false,
@@ -254,7 +253,7 @@ class PPGViewState extends State<PPGView> with SingleTickerProviderStateMixin {
                           onStart: () => _toggle(),
                           onEnd: () => _untoggle(),
                           controller: _timerController,
-                          duration: const Duration(seconds: 20),
+                          duration: const Duration(seconds: 30),
                         )
                     )
                   ),

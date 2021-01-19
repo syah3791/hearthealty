@@ -3,9 +3,8 @@ import 'package:hearthealthy/widget/constants.dart';
 import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/pages/education/read_news_view.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class HomeView extends StatefulWidget with NavigationStates{
+class HomeView extends StatefulWidget{
   @override
   _HomeState createState() => _HomeState();
 }
@@ -20,10 +19,14 @@ class _HomeState extends State<HomeView> {
         backgroundColor: Color(0xffdfd7ca),
         body: new Stack(
           children: <Widget>[
-            new Container(
-              decoration: new BoxDecoration(
-                image: new DecorationImage(image: new AssetImage("assets/images/heart_beating_0.gif", ), fit: BoxFit.scaleDown,),
-              ),
+            new Center(
+              child:Container(
+                height: heightScreen/2,
+                width: widthScreen/2,
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(image: new AssetImage("assets/images/heart_beating_0.gif", ), fit: BoxFit.scaleDown,),
+                ),
+              )
             ),
             new  Container(
               height: heightScreen,

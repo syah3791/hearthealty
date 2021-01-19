@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hearthealthy/widget/constants.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class LabView extends StatefulWidget with NavigationStates{
+class LabView extends StatefulWidget{
   // LabView({Key key}) : super(key: key);
   var parent;
   LabView({this.parent});
@@ -17,6 +16,7 @@ class _LabViewState extends State<LabView> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   bool isLoad=false;
   double Age;
+  ///Input controller
   final nameController = TextEditingController();
   final ageController = TextEditingController();
   final heightController = TextEditingController();
@@ -121,6 +121,7 @@ class _LabViewState extends State<LabView> {
                     SizedBox(
                       height: 10,
                     ),
+                    /////////////////////////////////////INPUT////////////////////////////////////////
                     Container(
                         padding: paddingInput,
                         color:Colors.white,
@@ -778,11 +779,7 @@ class _LabViewState extends State<LabView> {
       ),
     );
   }
-  // Form _mainForm(BuildContext context) {
-  //   print('sss'+name);
-  //   return ;
-  // }
-
+//Ketika menekan tombol simpan
   Future<void> _onSubmit() async {
     var form = _formKey.currentState;
     if (form.validate()) {
@@ -831,6 +828,7 @@ class _LabViewState extends State<LabView> {
       _check();
     }
   }
+  // Mengecek data
   _check(){
     print(gen);
     bool success = true;
@@ -909,7 +907,7 @@ class _LabViewState extends State<LabView> {
         builder: (context) {
           return AlertDialog(
             title: Text("Peringatan"),
-            content: Text("Nilai rujukan tidak normal,\n segeralah konsultasi kedokter untuk \npemeriksaan lebih lanjut\ndan ubah pola hidup lebih teratur \ndengan istirahat yang cukup serta \nmakan – makanan yang bergizi "),
+            content: Text("Nilai rujukan tinggi,\n segeralah konsultasi kedokter untuk \npemeriksaan lebih lanjut\ndan ubah pola hidup lebih teratur \ndengan istirahat yang cukup serta \nmakan – makanan yang bergizi "),
             actions: <Widget>[
               FlatButton(
                 child: Text("Yes"),
@@ -922,7 +920,7 @@ class _LabViewState extends State<LabView> {
         }
     );
   }
-  //Start
+  //Mengambil data dar shared_preferences
   Future<bool> _onInit() async {
     final SharedPreferences prefs = await _prefs;
     try{
@@ -1011,6 +1009,7 @@ class _LabViewState extends State<LabView> {
       _onNullVar();
     }
   }
+  //Warning jika data belum ada
   _onNullVar() async {
     showDialog(
         barrierDismissible: false,

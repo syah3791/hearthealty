@@ -5,9 +5,8 @@ import 'package:hearthealthy/pages/education/read_news_view.dart';
 import 'package:hearthealthy/widget/primary_card.dart';
 import 'package:hearthealthy/widget/secondary_card.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class HomeView extends StatefulWidget with NavigationStates{
+class HomeView extends StatefulWidget{
   @override
   _HomeState createState() => _HomeState();
 }

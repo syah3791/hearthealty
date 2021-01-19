@@ -4,9 +4,8 @@ import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/pages/education/read_news_view.dart';
 import 'package:hearthealthy/widget/secondary_card.dart';
 import 'package:hearthealthy/widget/primary_card.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class OlahragaView extends StatefulWidget with NavigationStates{
+class OlahragaView extends StatefulWidget{
   @override
   _OlahragaState createState() => _OlahragaState();
 }

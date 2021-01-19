@@ -22,9 +22,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: ThemeData(primaryColor: Color(0xffff5e56)),
         debugShowCheckedModeBanner: false,
+        // Mengecek apakah sudah login
         home: StreamBuilder<User>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
+              //Hasil pengecekan akan mengarahkan ke view mana setelash splashscreen
               if(snapshot.hasData && snapshot.data != null) {
                 return SplashScreenPage(isLogin:true, user:snapshot.data);
               }

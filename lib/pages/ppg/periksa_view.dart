@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hearthealthy/widget/constants.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:hearthealthy/pages/ppg/periksa.dart';
 
-class PeriksaView extends StatefulWidget with NavigationStates{
+class PeriksaView extends StatefulWidget{
   // Periksa({Key key}) : super(key: key);
   var parent;
   PeriksaView({this.parent});

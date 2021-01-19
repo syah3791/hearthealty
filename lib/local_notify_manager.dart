@@ -16,6 +16,7 @@ import 'package:timezone/timezone.dart' as tz;
 
 
 class LocalNotifyManager{
+  //////////////////INITILALISASI NOTIFIKASI////////////////
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
   var initSetting;
   BehaviorSubject<ReceivedNotification> get didReceiveLocalNotificationSubject =>
@@ -81,6 +82,8 @@ class LocalNotifyManager{
     // final String timeZoneName = await platform.invokeMethod('getTimeZoneName');
     tz.setLocalLocation(tz.getLocation('Asia/Jakarta'));
   }
+  //////////////////////////////////////////////////////////////////////////
+  ////////////////////////////DAFTAR NOTIFIKASI////////////////////////////
   Future<void> scheduleDailyNotificationOf06() async {
     await flutterLocalNotificationsPlugin.zonedSchedule(
         1,
@@ -200,9 +203,10 @@ class LocalNotifyManager{
         UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime);
   }
-
+//////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////////PENGATURAN WAKTU NOTIFIKASI////////////////
   tz.TZDateTime _nextInstance(time) {
-    final tz.TZDateTime now =  tz.TZDateTime.now(tz.local);//tz.TZDateTime.now(tz.local);
+    final tz.TZDateTime now =  tz.TZDateTime.now(tz.local);
     tz.TZDateTime scheduledDate =
     tz.TZDateTime(tz.local, now.year, now.month, now.day, time);
     if (scheduledDate.isBefore(now)) {
@@ -218,7 +222,7 @@ class LocalNotifyManager{
     }
     return scheduledDate;
   }
-
+//////////////////////////////////////////////////////////////////////////////////
   Future<void> showNotification() async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics =
     AndroidNotificationDetails(
@@ -238,9 +242,9 @@ class LocalNotifyManager{
   }
 
 }
-
+////////////////VARIABEL NOTIFIKASI MANAJER////////////////////////////////////
 LocalNotifyManager localNotifyManager = LocalNotifyManager.init();
-
+/////////////////////////////OBJEK NOTIFIKASI MANAJER////////////////////////////////
 class ReceivedNotification {
   final int id;
   final String title;

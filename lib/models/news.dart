@@ -338,7 +338,6 @@ List<News> makanBaikList = [
       content:
       'Warna merah alami pada tomat mengandung antioksidan likopen, yang mampu menurunkan risiko penyakit jantung dan stroke. Penelitian Nutrition Journal menyebutkan minum jus tomat tanpa gula selama 8 minggu mampu mengurangi kadar trigliserida, yang menghambat aliran darah dan memicu serangan jantung.Jenis makanan yang baik untuk penyakit jantung di atas mungkin ada yang tak cocok seleranya di lidah Anda atau terlalu mahal.Tak usah bingung, Anda bisa menggantinya dengan buah yang harganya lebih terjangkau. Buah untuk penyakit jantung antara lain alpukat, anggur, pisang, jeruk, melon, pepaya, stroberi, dan apel.Kandungan vitamin pada buah-buahan tersebut baik dan kaya akan serat sehingga baik untuk jantung.'
   ),
-
   News(
       author: "BBC News",
       estimate: "5",

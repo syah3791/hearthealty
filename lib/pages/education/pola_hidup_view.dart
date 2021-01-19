@@ -3,9 +3,8 @@ import 'package:hearthealthy/widget/constants.dart';
 import 'package:hearthealthy/models/news.dart';
 import 'package:hearthealthy/pages/education/read_news_view.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class PolaHidupView extends StatefulWidget with NavigationStates{
+class PolaHidupView extends StatefulWidget{
   @override
   _PolaHidupState createState() => _PolaHidupState();
 }

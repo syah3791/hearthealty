@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hearthealthy/widget/constants.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class SettingView extends StatefulWidget with NavigationStates{
+class SettingView extends StatefulWidget{
   // SettingView({Key key}) : super(key: key);
   @override
   _SettingViewState createState() => _SettingViewState();
@@ -47,6 +46,7 @@ class _SettingViewState extends State<SettingView> {
                     SizedBox(
                       height: 10,
                     ),
+                    //////////////////////////////INPUT //////////////////
                     Container(
                         padding: paddingInput,
                         color:Colors.white,
@@ -165,6 +165,7 @@ class _SettingViewState extends State<SettingView> {
                           keyboardType: TextInputType.number,
                         )
                     ),
+                    ////////////////////////////////////////////////////////////////////////
                     SizedBox(
                       height: 10,
                     ),
@@ -202,11 +203,7 @@ class _SettingViewState extends State<SettingView> {
       ),
     );
   }
-  // Form _mainForm(BuildContext context) {
-  //   print('sss'+name);
-  //   return ;
-  // }
-
+///Keteki mengnekan tombol simpan
   Future<void> _onSubmit() async {
     var form = _formKey.currentState;
     if (form.validate()) {

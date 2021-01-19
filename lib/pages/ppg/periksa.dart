@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hearthealthy/widget/constants.dart';
-import 'package:hearthealthy/bloc.navigation_bloc/navigation_bloc.dart';
 
-class Periksa extends StatefulWidget with NavigationStates{
+class Periksa extends StatefulWidget{
   // Periksa({Key key}) : super(key: key);
   String name;
   double less;
@@ -55,7 +54,7 @@ class _PeriksaState extends State<Periksa> {
                             labelText:widget.name,
                             hintText: widget.name,
                           ),
-                          textCapitalization: TextCapitalization.sentences,
+                          keyboardType: TextInputType.number,
 
                         )
                     ),
@@ -119,6 +118,7 @@ class _PeriksaState extends State<Periksa> {
   }
 
   _success(isSuccess) async {
+    String tinggi = _nilai > widget.greater+10 ? 'Nilai rujukan anda tinggi' : 'Nilai rujukan agak sedikit tinggi';
     isSuccess ?
     showDialog(
       // barrierDismissible: false,
@@ -144,7 +144,7 @@ class _PeriksaState extends State<Periksa> {
         builder: (context) {
           return AlertDialog(
             title: Text("Peringatan"),
-            content: Text("Nilai rujukan tidak,\n segeralah konsultasi kedokter untuk \npemeriksaan lebih lanjut\ndan ubah pola hidup lebih teratur \ndengan istirahat yang cukup serta \nmakan – makanan yang bergizi "),
+            content: Text("$tinggi,\n segeralah konsultasi kedokter untuk \npemeriksaan lebih lanjut\ndan ubah pola hidup lebih teratur \ndengan istirahat yang cukup serta \nmakan – makanan yang bergizi "),
             actions: <Widget>[
               FlatButton(
                 child: Text("Yes"),
